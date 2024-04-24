@@ -3,7 +3,7 @@ package ar.edu.unlp.info.oo2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TopografiaHeterogenea implements Topografia {
+public class TopografiaHeterogenea extends Topografia {
     private List<Topografia> topografiasInternas;
 
     public TopografiaHeterogenea(Topografia topografia1, Topografia topografia2, Topografia topografia3, Topografia topografia4) {
@@ -18,17 +18,16 @@ public class TopografiaHeterogenea implements Topografia {
     public double calcularProporcion() {
         return this.topografiasInternas
                 .stream()
-                .mapToDouble(topografia -> topografia.calcularProporcion())
+                .mapToDouble(Topografia::calcularProporcion)
                 .sum()
                 / this.topografiasInternas.size();
     }
 
-    @Override
-    public boolean equals(Topografia topografia) {
-        return topografia.equals(this);
+    public boolean equals(TopografiaHeterogenea topografiaHeterogenea) {
+        return super.equals(topografiaHeterogenea) && this.tieneLaMismaEstructuraQue(topografiaHeterogenea);
     }
 
-    public boolean equals(TopografiaHeterogenea topografiaHeterogenea) {
+    private boolean tieneLaMismaEstructuraQue(TopografiaHeterogenea topografiaHeterogenea) {
         boolean equal = true;
 
         for (int i = 0; i < this.topografiasInternas.size(); i++) {
