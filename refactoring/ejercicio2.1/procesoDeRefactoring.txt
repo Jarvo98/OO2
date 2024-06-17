@@ -1,0 +1,15 @@
+Primera iteración:
+Las clases empleado tienen código duplicado
+Hay que extraer el código duplicado a una súper clase, pongo en la super clase los atributos duplicados de nombre, apellido y sueldo básico
+
+Segunda iteración:
+Las clases empleado tienen código duplicado en los métodos de sueldo
+Hay que subir el método a la super clase y hacer uso de él en las subclases
+
+Tercera iteración:
+Las clases EmpleadoPlanta y EmpleadoTemporario tienen código duplicado
+Hay que extraer ese comportamiento a una super clase y moverlo a un método en esa súper clase.
+
+Cuarta iteración:
+Las clases Empleado rompen el principio de encapsulamiento
+Hay que cambiar el acceso de las variables que son internas al funcionamiento de Empleado

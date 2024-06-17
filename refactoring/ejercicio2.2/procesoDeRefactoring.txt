@@ -1,0 +1,17 @@
+Primera Iteración:
+La clase Juego tiene un acceso indebido al estado interno de la clase Jugador lo que el encapsulamiento e tiene envidia
+de funcionalidades porque implementa algo que la clase Jugador debería hacer.
+
+Hay que mover el método que está en la clase Juego a la clase Jugador para solucionar la envidia de atributos y el
+problema de que la clase Jugador es una clase de datos.
+
+Segunda Iteración:
+La clase Juego no debería recibir al jugador por parámetro
+
+Hay que relacionar al juego con el jugador y hacerlo parte del estado interno de la clase Juego. Además hay que proveer
+constructores en la clase Juego para poder relacionar el juego con el jugador.
+
+Tercera Iteración:
+La clase Jugador rompe el encapsulamiento al hacer público su estado interno
+
+Hay que cambiar el acceso de las variables de instancia y proveer constructores.
