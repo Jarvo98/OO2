@@ -1,0 +1,29 @@
+Primera iteración:
+El método ultimosPosts es muy largo y por tanto difícil de entender. Otro code smell es la obsesión por primitivos.
+
+Para solucionar esto como primer paso podemos mover a un método la búsqueda de los otros usuarios.
+
+Segunda iteración:
+Todavía sigue estan muy largo el método ultimosPosts porque se quiere reinventar la rueda con el ordenado de la lista de
+posts.
+
+Para solucionar esto podemos hacer uso de las apis que ofrece Java de forma nativa para lists.
+
+Tercera iteración:
+El nuevo método al que movimos la lógica de buscar posts de usuarios a excepcioón del que pasamos por parámetro todavía
+no nos soluciona la obsesión con los primitivos y el tema del método largo porque estamos usando la api de streams para
+ordenarlo en medio del método ultimosPosts.
+
+Para solucionarlo vamos a renombrar el método y cambiar su lógica para que refleje que busca los posts y los ordena.
+
+Cuarta iteración:
+Tenemos dos code smells, reinventando la rueda con el iterator y utilizando un primitivo innecesario, que podemos
+solucionar con lo mismo:
+
+Podemos actualizar el método para que utilice la api de los streams de nuevo. Así se simplifica mucho el código.
+
+Quinta iteración:
+Tenemos código ligeramente duplicado para manejar las listas de posts. Estamos utilizando la api de streams más veces de
+las que deberíamos
+
+Podemos mover toda la lógica al mismo método que ya estando refactorizada no es muy larga.
