@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.List;
 
 public interface DatabaseAccess {
-    Collection<String> getSearchResults(String queryString);
+    Collection<String> getSearchResults(String queryString) throws Exception;
 
-    int insertNewRow(List<String> rowData);
+    int insertNewRow(List<String> rowData) throws Exception;
 }
